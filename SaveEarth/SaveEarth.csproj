@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.NET.Test.Sdk.16.9.4\build\net45\Microsoft.NET.Test.Sdk.props" Condition="Exists('..\packages\Microsoft.NET.Test.Sdk.16.9.4\build\net45\Microsoft.NET.Test.Sdk.props')" />
+  <Import Project="..\packages\Microsoft.CodeCoverage.16.9.4\build\netstandard1.0\Microsoft.CodeCoverage.props" Condition="Exists('..\packages\Microsoft.CodeCoverage.16.9.4\build\netstandard1.0\Microsoft.CodeCoverage.props')" />
+  <Import Project="..\packages\NUnit3TestAdapter.3.17.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.17.0\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="..\packages\NUnit.3.13.2\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.13.2\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E14F97BE-42C7-4C1F-AB04-31185116D874}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SaveEarth</RootNamespace>
+    <AssemblyName>SaveEarth</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.CodeCoverage.Shim, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeCoverage.16.9.4\lib\net45\Microsoft.VisualStudio.CodeCoverage.Shim.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.13.2.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.13.2\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainClasses\AirPlane.cs" />
+    <Compile Include="MainClasses\AttackAlien.cs" />
+    <Compile Include="MainClasses\AirPlaneBullet.cs" />
+    <Compile Include="MainClasses\AirPlaneRocket.cs" />
+    <Compile Include="MainClasses\BoostType.cs" />
+    <Compile Include="MainClasses\AlienBullet.cs" />
+    <Compile Include="MainClasses\AttackType.cs" />
+    <Compile Include="MainClasses\AlienRocket.cs" />
+    <Compile Include="MainClasses\RocketAlien.cs" />
+    <Compile Include="MainClasses\RocketBoost.cs" />
+    <Compile Include="MainClasses\HealthPointsBoost.cs" />
+    <Compile Include="MainClasses\IBullet.cs" />
+    <Compile Include="MainClasses\IBoost.cs" />
+    <Compile Include="MainClasses\KamikazeBullet.cs" />
+    <Compile Include="MainClasses\KamikazeAlien.cs" />
+    <Compile Include="MainClasses\BulletType.cs" />
+    <Compile Include="MainClasses\IAlien.cs" />
+    <Compile Include="MainClasses\Turn.cs" />
+    <Compile Include="MainClasses\Level.cs" />
+    <Compile Include="MainClasses\Planet.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainMenuControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MainMenuControl.Designer.cs">
+      <DependentUpon>MainMenuControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LevelSelectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LevelSelectionControl.Designer.cs">
+      <DependentUpon>LevelSelectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BattleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BattleControl.Designer.cs">
+      <DependentUpon>BattleControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="image\Menu\Buttons\Back.png" />
+    <Content Include="image\Menu\Background\backgroundSpace.png" />
+    <Content Include="image\Menu\Buttons\BackPress.png" />
+    <Content Include="image\Menu\Desks\LoseDesk\DimmingFrame.png" />
+    <Content Include="image\Menu\Desks\LoseDesk\LoseDesk.png" />
+    <Content Include="image\Menu\Desks\LoseDesk\Menu.png" />
+    <Content Include="image\Menu\Desks\LoseDesk\MenuPress.png" />
+    <Content Include="image\Menu\Desks\LoseDesk\ResrtartLvl.png" />
+    <Content Include="image\Menu\Desks\LoseDesk\ResrtartLvlPress.png" />
+    <Content Include="image\Menu\Desks\PauseDesk\Pause.png" />
+    <Content Include="image\Menu\Desks\PauseDesk\Resume.png" />
+    <Content Include="image\Menu\Desks\PauseDesk\ResumePress.png" />
+    <Content Include="image\Menu\Buttons\Easy.png" />
+    <Content Include="image\Menu\Buttons\EasyHelpDesk.png" />
+    <Content Include="image\Menu\Buttons\EasyPress.png" />
+    <Content Include="image\Menu\Buttons\Exit.png" />
+    <Content Include="image\Menu\Buttons\ExitPress.png" />
+    <Content Include="image\Menu\Buttons\Hard.png" />
+    <Content Include="image\Menu\Buttons\HardHelpDesk.png" />
+    <Content Include="image\Menu\Buttons\HardPress.png" />
+    <Content Include="image\Menu\InfoBar\infoBar.png" />
+    <Content Include="image\Menu\InfoBar\infoBarRockets_0.png" />
+    <Content Include="image\Menu\InfoBar\infoBarRockets_1.png" />
+    <Content Include="image\Menu\InfoBar\infoBarRockets_2.png" />
+    <Content Include="image\Menu\InfoBar\infoBarRockets_3.png" />
+    <Content Include="image\Menu\InfoBar\infoBarRockets_4.png" />
+    <Content Include="image\Menu\InfoBar\infoBar_0.png" />
+    <Content Include="image\Menu\InfoBar\infoBar_1.png" />
+    <Content Include="image\Menu\InfoBar\infoBar_2.png" />
+    <Content Include="image\Menu\InfoBar\infoBar_3.png" />
+    <Content Include="image\Menu\Logo\LOGO3_1.png" />
+    <Content Include="image\Menu\Logo\LOGO3_2.png" />
+    <Content Include="image\Menu\Logo\LOGO3_3.png" />
+    <Content Include="image\Menu\Logo\LOGO3_4.png" />
+    <Content Include="image\Menu\Logo\LOGO3_5.png" />
+    <Content Include="image\Menu\Logo\LOGO3_6.png" />
+    <Content Include="image\Menu\Buttons\Normal.png" />
+    <Content Include="image\Menu\Buttons\NormalHelpDesk.png" />
+    <Content Include="image\Menu\Buttons\NormalPress.png" />
+    <Content Include="image\Menu\Buttons\Select.png" />
+    <Content Include="image\Menu\Buttons\Start.png" />
+    <Content Include="image\Menu\Buttons\StartPress.png" />
+    <Content Include="image\Sprites\AirPlane\LeftTurn\AirPlaneTurnLeft_1.png" />
+    <Content Include="image\Sprites\AirPlane\LeftTurn\AirPlaneTurnLeft_2.png" />
+    <Content Include="image\Sprites\AirPlane\LeftTurn\AirPlaneTurnLeft_3.png" />
+    <Content Include="image\Sprites\AirPlane\LeftTurn\AirPlaneTurnLeft_4.png" />
+    <Content Include="image\Sprites\AirPlane\NoTurn\AirPlane_1.png" />
+    <Content Include="image\Sprites\AirPlane\NoTurn\AirPlane_2.png" />
+    <Content Include="image\Sprites\AirPlane\NoTurn\AirPlane_3.png" />
+    <Content Include="image\Sprites\AirPlane\NoTurn\AirPlane_4.png" />
+    <Content Include="image\Sprites\AirPlane\RightTurn\AirPlaneTurnRight_1.png" />
+    <Content Include="image\Sprites\AirPlane\RightTurn\AirPlaneTurnRight_2.png" />
+    <Content Include="image\Sprites\AirPlane\RightTurn\AirPlaneTurnRight_3.png" />
+    <Content Include="image\Sprites\AirPlane\RightTurn\AirPlaneTurnRight_4.png" />
+    <Content Include="image\Sprites\Aliens\AttackAlien\AttackAlien_1.png" />
+    <Content Include="image\Sprites\Aliens\AttackAlien\AttackAlien_2.png" />
+    <Content Include="image\Sprites\Aliens\AttackAlien\AttackAlien_3.png" />
+    <Content Include="image\Sprites\Aliens\AttackAlien\AttackAlien_4.png" />
+    <Content Include="image\Sprites\Aliens\KamikazeAlien\KamikazeAlien_1.png" />
+    <Content Include="image\Sprites\Aliens\KamikazeAlien\KamikazeAlien_2.png" />
+    <Content Include="image\Sprites\Aliens\KamikazeAlien\KamikazeAlien_3.png" />
+    <Content Include="image\Sprites\Aliens\KamikazeAlien\KamikazeAlien_4.png" />
+    <Content Include="image\Sprites\Aliens\KamikazeAlien\KamikazeAlien_5.png" />
+    <Content Include="image\Sprites\Aliens\KamikazeAlien\KamikazeAlien_6.png" />
+    <Content Include="image\Sprites\Aliens\RocketAlien\RocketAlien_1.png" />
+    <Content Include="image\Sprites\Aliens\RocketAlien\RocketAlien_2.png" />
+    <Content Include="image\Sprites\Aliens\RocketAlien\RocketAlien_3.png" />
+    <Content Include="image\Sprites\Aliens\RocketAlien\RocketAlien_4.png" />
+    <Content Include="image\Sprites\Aliens\RocketAlien\RocketAlien_5.png" />
+    <Content Include="image\Sprites\Aliens\RocketAlien\RocketAlien_6.png" />
+    <Content Include="image\Sprites\Bang\bang_1.png" />
+    <Content Include="image\Sprites\Bang\bang_2.png" />
+    <Content Include="image\Sprites\Bang\bang_3.png" />
+    <Content Include="image\Sprites\Bang\bang_4.png" />
+    <Content Include="image\Sprites\Bang\bang_5.png" />
+    <Content Include="image\Sprites\Bang\bang_6.png" />
+    <Content Include="image\Sprites\Boosts\HealthPointsBoost\HealthPointsBoost_1.png" />
+    <Content Include="image\Sprites\Boosts\RocketBoost\RocketBoost_1.png" />
+    <Content Include="image\Sprites\Bullets\AirPlaneBullet.png" />
+    <Content Include="image\Sprites\Bullets\AlienBullet.png" />
+    <Content Include="image\Sprites\Earth\DeadOfEarth\Earth_1.png" />
+    <Content Include="image\Sprites\Earth\DeadOfEarth\Earth_10.png" />
+    <Content Include="image\Sprites\Earth\DeadOfEarth\Earth_2.png" />
+    <Content Include="image\Sprites\Earth\DeadOfEarth\Earth_3.png" />
+    <Content Include="image\Sprites\Earth\DeadOfEarth\Earth_4.png" />
+    <Content Include="image\Sprites\Earth\DeadOfEarth\Earth_5.png" />
+    <Content Include="image\Sprites\Earth\DeadOfEarth\Earth_6.png" />
+    <Content Include="image\Sprites\Earth\DeadOfEarth\Earth_7.png" />
+    <Content Include="image\Sprites\Earth\DeadOfEarth\Earth_8.png" />
+    <Content Include="image\Sprites\Earth\DeadOfEarth\Earth_9.png" />
+    <Content Include="image\Sprites\Earth\LifeOfEarth\Earth_1.png" />
+    <Content Include="image\Sprites\Earth\LifeOfEarth\Earth_10.png" />
+    <Content Include="image\Sprites\Earth\LifeOfEarth\Earth_11.png" />
+    <Content Include="image\Sprites\Earth\LifeOfEarth\Earth_2.png" />
+    <Content Include="image\Sprites\Earth\LifeOfEarth\Earth_3.png" />
+    <Content Include="image\Sprites\Earth\LifeOfEarth\Earth_4.png" />
+    <Content Include="image\Sprites\Earth\LifeOfEarth\Earth_5.png" />
+    <Content Include="image\Sprites\Earth\LifeOfEarth\Earth_6.png" />
+    <Content Include="image\Sprites\Earth\LifeOfEarth\Earth_7.png" />
+    <Content Include="image\Sprites\Earth\LifeOfEarth\Earth_8.png" />
+    <Content Include="image\Sprites\Earth\LifeOfEarth\Earth_9.png" />
+    <Content Include="image\Sprites\Rockets\AlienRocket\Rocket_1.png" />
+    <Content Include="image\Sprites\Rockets\AlienRocket\Rocket_2.png" />
+    <Content Include="image\Sprites\Rockets\AlienRocket\Rocket_3.png" />
+    <Content Include="image\Sprites\Rockets\AlienRocket\Rocket_4.png" />
+    <Content Include="image\Sprites\Rockets\Rocket_1.png" />
+    <Content Include="image\Sprites\Rockets\Rocket_2.png" />
+    <Content Include="image\Sprites\Rockets\Rocket_3.png" />
+    <Content Include="image\Sprites\Rockets\Rocket_4.png" />
+    <Content Include="image\Tutorial\Tutorial_1.png" />
+    <Content Include="image\Tutorial\Tutorial_2.png" />
+    <Content Include="image\Tutorial\Tutorial_3.png" />
+    <Content Include="image\Tutorial\Tutorial_4.png" />
+    <Content Include="image\Tutorial\Tutorial_5.png" />
+    <Content Include="image\Tutorial\Tutorial_6.png" />
+    <Content Include="image\Tutorial\Tutorial_7.png" />
+    <Content Include="image\Tutorial\Tutorial_Enter.png" />
+    <Content Include="Sounds\Hurt_1.wav" />
+    <Content Include="Sounds\Взрыв.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.13.2\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.13.2\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.17.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.17.0\build\net35\NUnit3TestAdapter.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeCoverage.16.9.4\build\netstandard1.0\Microsoft.CodeCoverage.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeCoverage.16.9.4\build\netstandard1.0\Microsoft.CodeCoverage.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeCoverage.16.9.4\build\netstandard1.0\Microsoft.CodeCoverage.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeCoverage.16.9.4\build\netstandard1.0\Microsoft.CodeCoverage.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NET.Test.Sdk.16.9.4\build\net45\Microsoft.NET.Test.Sdk.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NET.Test.Sdk.16.9.4\build\net45\Microsoft.NET.Test.Sdk.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NET.Test.Sdk.16.9.4\build\net45\Microsoft.NET.Test.Sdk.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NET.Test.Sdk.16.9.4\build\net45\Microsoft.NET.Test.Sdk.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.CodeCoverage.16.9.4\build\netstandard1.0\Microsoft.CodeCoverage.targets" Condition="Exists('..\packages\Microsoft.CodeCoverage.16.9.4\build\netstandard1.0\Microsoft.CodeCoverage.targets')" />
+  <Import Project="..\packages\Microsoft.NET.Test.Sdk.16.9.4\build\net45\Microsoft.NET.Test.Sdk.targets" Condition="Exists('..\packages\Microsoft.NET.Test.Sdk.16.9.4\build\net45\Microsoft.NET.Test.Sdk.targets')" />
+</Project>
